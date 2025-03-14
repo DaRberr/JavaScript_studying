@@ -27,11 +27,11 @@ function solveFromLegs(a, b) {
 }
 
     let alpha = toDegrees(Math.atan2(a, b));
-    let beta = 90 - alpha;
+    let beta = 90.0 - alpha;
 
     return { a, b, c, alpha, beta };
 }
-
+//asfsaf
 
 
 function solveFromLegAndHypotenuse(a, c) {

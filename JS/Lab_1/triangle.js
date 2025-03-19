@@ -31,7 +31,6 @@ function solveFromLegs(a, b) {
 
     return { a, b, c, alpha, beta };
 }
-//asfsaf
 
 
 function solveFromLegAndHypotenuse(a, c) {

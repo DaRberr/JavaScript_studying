@@ -6,12 +6,12 @@ const gameOverDiv = document.getElementById('gameover');
 const timerDisplay = document.getElementById('timer');
 
 let score = 0;
-let spawnTime = 4000; // default
+let spawnTime = 4000;
 let clickTimeout;
 let currentSquares = [];
 let timerInterval;
 let clickedSquares = 0;
-let baseSquareSize = 50; // Базовий розмір
+let baseSquareSize = 50;
 
 function startGame() {
   const difficulty = difficultySelect.value;
@@ -33,7 +33,7 @@ function startGame() {
 
 function spawnNewSquare(color, difficulty) {
   clearSquares();
-  clickedSquares = 0; // обнуляємо кількість натиснутих квадратів
+  clickedSquares = 0;
 
   let squaresNeeded = (difficulty === 'superhard') ? 2 : 1;
   let sizeMultiplier = getSizeMultiplier(difficulty);
@@ -49,13 +49,13 @@ function spawnNewSquare(color, difficulty) {
     square.style.left = `${Math.random() * (window.innerWidth - currentSquareSize)}px`;
 
     square.addEventListener('click', (e) => {
-      e.stopPropagation(); // щоб уникнути можливих конфліктів
+      e.stopPropagation();
 
       score++;
       clickedSquares++;
       scoreBoard.firstChild.textContent = `Рахунок: ${score}`;
 
-      square.remove(); // прибираємо натиснутий квадрат
+      square.remove();
       currentSquares = currentSquares.filter(s => s !== square);
 
       if (difficulty !== 'superhard' || clickedSquares === 2) {
@@ -80,7 +80,7 @@ function getSizeMultiplier(difficulty) {
 }
 
 function startTimer(difficulty) {
-  let timeLeft = spawnTime / 1000; // в секундах
+  let timeLeft = spawnTime / 1000;
   timerDisplay.textContent = `Час: ${timeLeft.toFixed(1)} с`;
 
   timerInterval = setInterval(() => {

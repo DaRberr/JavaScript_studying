@@ -4,8 +4,7 @@ document.getElementById("catalog").addEventListener("click", loadCategories);
 function loadHome() {
   document.getElementById("content").innerHTML = `
     <h1>Welcome to our Store!</h1>
-    <p>Click "Catalog" to explore products.</p>
-  `;
+    <p>Click "Catalog" to explore products.</p>`;
 }
 
 function loadCategories() {
@@ -18,8 +17,8 @@ function loadCategories() {
       const content = document.getElementById("content");
       content.innerHTML = "<h2>Catalog Categories</h2><ul class='list-group mb-3'>";
       categories.forEach(cat => {
-        content.innerHTML += `
-          <li class='list-group-item'>
+        content.innerHTML += 
+          `<li class='list-group-item'>
             <a href="#" onclick="loadCategory('${cat.shortname}')">${cat.name}</a>
           </li>`;
       });
